@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/toast-snackbar.css">
+</head>
+
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-12">
+				<h1>Toast</h1>
+			</div>
+			<div class="col-12">
+				<button id="btn-toast-1" class="btn btn-outline-primary">Show toast primary</button>
+				<button id="btn-toast-2" class="btn btn-outline-success">Show toast success</button>
+				<button id="btn-toast-3" class="btn btn-outline-info">Show toast info</button>
+				<button id="btn-toast-4" class="btn btn-outline-warning">Show toast warning</button>
+				<button id="btn-toast-5" class="btn btn-outline-danger">Show toast danger</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<h1>SnackBar</h1>
+			</div>
+			<div class="col-12">
+				<button id="btn-snackbar-1" class="btn btn-outline-primary">Show snackbar primary</button>
+				<button id="btn-snackbar-2" class="btn btn-outline-success">Show snackbar success</button>
+				<button id="btn-snackbar-3" class="btn btn-outline-info">Show snackbar info</button>
+				<button id="btn-snackbar-4" class="btn btn-outline-warning">Show snackbar warning</button>
+				<button id="btn-snackbar-5" class="btn btn-outline-danger">Show snackbar danger</button>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+
+<script src="js/toast-snackbar.js"></script>
+
+<script>
+	// Toast
+	$("#btn-toast-1").click(function (ev) {
+		Toast.primary("Bạn vừa nhấn vào toast primary");
+	});
+	$("#btn-toast-2").click(function (ev) {
+		Toast.success("Bạn vừa nhấn vào toast success");
+	});
+	$("#btn-toast-3").click(function (ev) {
+		Toast.info("Bạn vừa nhấn vào toast info");
+	});
+	$("#btn-toast-4").click(function (ev) {
+		Toast.warning("Bạn vừa nhấn vào toast warning");
+	});
+	$("#btn-toast-5").click(function (ev) {
+		Toast.danger("Bạn vừa nhấn vào toast danger");
+	});
+
+	// SnackBar
+	
+	$("#btn-snackbar-1").click(function (ev) {
+		SnackBar.primary("Bạn vừa nhấn vào snackBar primary");
+	});
+	$("#btn-snackbar-2").click(function (ev) {
+		SnackBar.success("Bạn vừa nhấn vào snackBar success");
+	});
+	$("#btn-snackbar-3").click(function (ev) {
+		SnackBar.info("Bạn vừa nhấn vào snackBar info");
+	});
+	$("#btn-snackbar-4").click(function (ev) {
+		SnackBar.warning("Bạn vừa nhấn vào snackBar warning");
+	});
+	$("#btn-snackbar-5").click(function (ev) {
+		SnackBar.danger("Bạn vừa nhấn vào snackBar danger");
+	});
+
+</script>
+
+</html>
