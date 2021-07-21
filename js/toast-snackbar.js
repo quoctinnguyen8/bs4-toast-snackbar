@@ -6,10 +6,13 @@
 / **/
 const TOAST_CONTAINER_HTML = `<div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>`;
 
-const NOTIFY_DELAY_DEFAULT = 4000;
+const TOAST_DELAY_DEFAULT = 4500;
+
+// 'top-right', 'top-left', 'top-center', 'bottom-right', 'bottom-left', 'bottom-center'
+const TOAST_POSITION_DEFAULT = 'bottom-right';
 
 const NotifyOption = {
-	position: 'top-right',
+	position: null,
 	dismissible: true,
 	stackable: true,
 	pauseDelayOnHover: true,
@@ -24,7 +27,7 @@ const NotifyOption = {
 	title: '',
 	subtitle: null,
 	content: null,
-	delay: NOTIFY_DELAY_DEFAULT,
+	delay: TOAST_DELAY_DEFAULT,
 	img: null
 };
 
@@ -37,7 +40,7 @@ $('body').on('hidden.bs.toast', '.toast', function () {
 function renderNotify() {
 	/** No container, create our own **/
 	if (!$('#toast-container').length) {
-		const position = ['top-right', 'top-left', 'top-center', 'bottom-right', 'bottom-left', 'bottom-center'].includes(NotifyOption.position) ? NotifyOption.position : 'top-right';
+		const position = ['top-right', 'top-left', 'top-center', 'bottom-right', 'bottom-left', 'bottom-center'].includes(NotifyOption.position) ? NotifyOption.position : TOAST_POSITION_DEFAULT;
 
 		$('body').prepend(TOAST_CONTAINER_HTML);
 		$('#toast-container').addClass(position);
@@ -158,7 +161,7 @@ const Toast = {
 	show: (content, title, delay, position) => {
 		NotifyOption.content = content;
 		NotifyOption.title = !title || title == '' ? "Thông báo" : title;
-		NotifyOption.delay = delay ? delay : NOTIFY_DELAY_DEFAULT;
+		NotifyOption.delay = delay ? delay : TOAST_DELAY_DEFAULT;
 		if (!position && position != '') {
 			NotifyOption.position = position;
 		}
@@ -192,7 +195,7 @@ const SnackBar = {
 	show: (content, delay, position) => {
 		NotifyOption.content = null;
 		NotifyOption.title = content;
-		NotifyOption.delay = delay ? delay : NOTIFY_DELAY_DEFAULT;
+		NotifyOption.delay = delay ? delay : TOAST_DELAY_DEFAULT;
 		if (!position && position != '') {
 			NotifyOption.position = position;
 		}
